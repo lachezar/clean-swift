@@ -1,3 +1,5 @@
 import Foundation
 
-public final class ComponentsContainer {}
+public final class ComponentsContainer {
+  public init() {}
+}
