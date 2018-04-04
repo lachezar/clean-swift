@@ -1,3 +1,3 @@
 import Foundation
 
-final class ComponentsContainer {}
+public final class ComponentsContainer {}
