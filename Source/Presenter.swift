@@ -1,3 +1,3 @@
 import Foundation
 
-public protocol Presenter: class {}
+public protocol Presenter: AnyObject {}

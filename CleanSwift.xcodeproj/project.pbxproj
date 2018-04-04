@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B61ADAFB2073B9E0000A8F12 /* CleanSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61ADAF12073B9E0000A8F12 /* CleanSwift.framework */; };
-		B61ADB002073B9E0000A8F12 /* CleanSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADAFF2073B9E0000A8F12 /* CleanSwiftTests.swift */; };
 		B61ADB022073B9E0000A8F12 /* CleanSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = B61ADAF42073B9E0000A8F12 /* CleanSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B61ADB102073C59F000A8F12 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB0F2073C59F000A8F12 /* Router.swift */; };
 		B61ADB122073C62B000A8F12 /* RouterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB112073C62B000A8F12 /* RouterError.swift */; };
@@ -16,6 +15,7 @@
 		B61ADB162073C67D000A8F12 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB152073C67D000A8F12 /* Interactor.swift */; };
 		B61ADB182073C69B000A8F12 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB172073C69B000A8F12 /* Presenter.swift */; };
 		B61ADB1A2073C73E000A8F12 /* ComponentsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB192073C73E000A8F12 /* ComponentsContainer.swift */; };
+		B641F8682074E788009A0A04 /* UIViewController+Childs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641F8672074E788009A0A04 /* UIViewController+Childs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,10 +30,9 @@
 
 /* Begin PBXFileReference section */
 		B61ADAF12073B9E0000A8F12 /* CleanSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B61ADAF42073B9E0000A8F12 /* CleanSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CleanSwift.h; path = ../CleanSwift.h; sourceTree = "<group>"; };
-		B61ADAF52073B9E0000A8F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		B61ADAF42073B9E0000A8F12 /* CleanSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanSwift.h; sourceTree = "<group>"; };
+		B61ADAF52073B9E0000A8F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B61ADAFA2073B9E0000A8F12 /* CleanSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B61ADAFF2073B9E0000A8F12 /* CleanSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanSwiftTests.swift; sourceTree = "<group>"; };
 		B61ADB012073B9E0000A8F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B61ADB0F2073C59F000A8F12 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B61ADB112073C62B000A8F12 /* RouterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterError.swift; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		B61ADB152073C67D000A8F12 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		B61ADB172073C69B000A8F12 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		B61ADB192073C73E000A8F12 /* ComponentsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsContainer.swift; sourceTree = "<group>"; };
+		B641F8672074E788009A0A04 /* UIViewController+Childs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Childs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,13 +89,12 @@
 				B61ADAF42073B9E0000A8F12 /* CleanSwift.h */,
 				B61ADAF52073B9E0000A8F12 /* Info.plist */,
 			);
-			path = CleanSwift;
+			name = CleanSwift;
 			sourceTree = "<group>";
 		};
 		B61ADAFE2073B9E0000A8F12 /* CleanSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				B61ADAFF2073B9E0000A8F12 /* CleanSwiftTests.swift */,
 				B61ADB012073B9E0000A8F12 /* Info.plist */,
 			);
 			path = CleanSwiftTests;
@@ -110,6 +109,7 @@
 				B61ADB152073C67D000A8F12 /* Interactor.swift */,
 				B61ADB172073C69B000A8F12 /* Presenter.swift */,
 				B61ADB192073C73E000A8F12 /* ComponentsContainer.swift */,
+				B641F8672074E788009A0A04 /* UIViewController+Childs.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -246,6 +246,7 @@
 				B61ADB122073C62B000A8F12 /* RouterError.swift in Sources */,
 				B61ADB162073C67D000A8F12 /* Interactor.swift in Sources */,
 				B61ADB142073C654000A8F12 /* Interface.swift in Sources */,
+				B641F8682074E788009A0A04 /* UIViewController+Childs.swift in Sources */,
 				B61ADB182073C69B000A8F12 /* Presenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,7 +255,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B61ADB002073B9E0000A8F12 /* CleanSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +402,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,6 +430,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

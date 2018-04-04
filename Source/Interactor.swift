@@ -1,3 +1,3 @@
 import Foundation
 
-public protocol Interactor: class {}
+public protocol Interactor: AnyObject {}

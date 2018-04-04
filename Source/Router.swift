@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol Router: class {
+public protocol Router: AnyObject {
   var viewController: UIViewController? { get set }
   var view: UIView? { get set }
 }
