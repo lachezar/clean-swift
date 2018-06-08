@@ -1,10 +1,14 @@
 import UIKit
 
 extension UIViewController {
-  public func add(_ child: UIViewController, containerView: UIView? = nil) {
+  public func add(_ child: UIViewController) {
     addChildViewController(child)
-    let view: UIView = containerView ?? self.view
     view.addSubview(child.view)
+    child.didMove(toParentViewController: self)
+  }
+  public func add(_ child: UIViewController, closure: (UIViewController) -> Void) {
+    addChildViewController(child)
+    closure(child)
     child.didMove(toParentViewController: self)
   }
 
