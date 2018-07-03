@@ -11,6 +11,6 @@ extension Router {
       throw RouterError.missingNavigationController("\(type(of: view))")
     }
 
-    nVC.pushViewController(vc, animated: true)
+    nVC.pushViewController(vc, animated: animated)
   }
 }
