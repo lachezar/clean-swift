@@ -29,7 +29,7 @@ opt_in_rules: # some rules are only opt-in
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
-  - Example
+  # - DemoApp
   - CleanSwiftTests
 
 # configurable rules can be customized from this configuration file

@@ -1,14 +1,19 @@
 import UIKit
 
 public protocol Router: AnyObject {
-  var viewController: UIViewController? { get set }
-  var view: UIView? { get set }
+  associatedtype Interface: UIViewController
+  associatedtype Factory
+
+  var interface: Interface! { get set }
+  var factory: Factory { get }
+
+  init(factory: Factory)
 }
 
 extension Router {
   public func push(to vc: UIViewController, animated: Bool = true) throws {
-    guard let nVC = viewController?.navigationController else {
-      throw RouterError.missingNavigationController("\(type(of: view))")
+    guard let nVC = interface.navigationController else {
+      throw RouterError.missingNavigationController("\(type(of: interface))")
     }
 
     nVC.pushViewController(vc, animated: animated)
