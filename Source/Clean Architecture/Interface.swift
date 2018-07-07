@@ -6,6 +6,4 @@ public protocol Interface: AnyObject {
 
   var router: Router { get }
   var interactor: Interactor { get }
-
-  init(router: Router, interactor: Interactor)
 }
