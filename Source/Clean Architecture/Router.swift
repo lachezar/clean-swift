@@ -11,6 +11,12 @@ public protocol Router: AnyObject {
 }
 
 extension Router {
+  public func next() {}
+  public func back() {
+    if interface.navigationController != nil {
+      pop()
+    }
+  }
   public func pop(to vc: UIViewController, animated: Bool = true) {
     guard let nVC = interface.navigationController else {
       fatalError(RouterError.missingNavigationController("\(type(of: interface))").localizedDescription)
