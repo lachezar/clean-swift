@@ -1,16 +1,25 @@
 import UIKit
 
 public protocol Router: AnyObject {
-  associatedtype Interface: UIViewController
+  associatedtype InterfaceType: UIViewController, Interface
   associatedtype Factory
 
-  var interface: Interface! { get set }
+  var interface: InterfaceType! { get set }
   var factory: Factory { get }
 
   init(factory: Factory)
 }
 
 extension Router {
+
+  public var interactor: Self.InterfaceType.InteractorType {
+    return interface.interactor
+  }
+
+  public var presenter: Self.InterfaceType.InteractorType.PresenterType {
+    return interface.interactor.presenter
+  }
+
   public func next() {}
   public func back() {
     if interface.navigationController != nil {

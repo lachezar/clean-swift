@@ -1,9 +1,18 @@
 import Foundation
 
 public protocol Interactor: AnyObject {
-  associatedtype Presenter
+  associatedtype PresenterType: Presenter
 
-  var presenter: Presenter { get }
+  var presenter: PresenterType { get }
 
-  init(presenter: Presenter)
+  init(presenter: PresenterType)
+}
+
+extension Interactor {
+  public var interface: Self.PresenterType.InterfaceType {
+    return presenter.interface
+  }
+  public var router: Self.PresenterType.InterfaceType.RouterType {
+    return presenter.interface.router
+  }
 }

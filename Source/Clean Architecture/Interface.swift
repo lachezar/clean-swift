@@ -1,9 +1,9 @@
 import Foundation
 
 public protocol Interface: AnyObject {
-  associatedtype Router
-  associatedtype Interactor
+  associatedtype RouterType: Router
+  associatedtype InteractorType: Interactor
 
-  var router: Router { get }
-  var interactor: Interactor { get }
+  var router: RouterType { get }
+  var interactor: InteractorType { get }
 }
