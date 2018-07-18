@@ -29,7 +29,6 @@
 		5CE940C920F0C1D0006A6522 /* TestScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE940C420F0C1D0006A6522 /* TestScreenPresenter.swift */; };
 		5CE940CA20F0C1D0006A6522 /* TestScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE940C520F0C1D0006A6522 /* TestScreenRouter.swift */; };
 		5CE940CB20F0C1D0006A6522 /* TestScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE940C620F0C1D0006A6522 /* TestScreenInteractor.swift */; };
-		5CE941A220F0E624006A6522 /* CleanSwift.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = B61ADAF12073B9E0000A8F12 /* CleanSwift.framework */; };
 		B61ADAFB2073B9E0000A8F12 /* CleanSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61ADAF12073B9E0000A8F12 /* CleanSwift.framework */; };
 		B61ADB102073C59F000A8F12 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB0F2073C59F000A8F12 /* Router.swift */; };
 		B61ADB122073C62B000A8F12 /* RouterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB112073C62B000A8F12 /* RouterError.swift */; };
@@ -77,17 +76,6 @@
 				5CAD27C320F519CF00BB1647 /* Differ.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CE941A120F0E5C4006A6522 /* Copy Framework */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(PROJECT_DIR)/Framework";
-			dstSubfolderSpec = 0;
-			files = (
-				5CE941A220F0E624006A6522 /* CleanSwift.framework in Copy Framework */,
-			);
-			name = "Copy Framework";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -314,7 +302,6 @@
 				B61ADAED2073B9E0000A8F12 /* Frameworks */,
 				B61ADAEE2073B9E0000A8F12 /* Headers */,
 				B61ADAEF2073B9E0000A8F12 /* Resources */,
-				5CE941A120F0E5C4006A6522 /* Copy Framework */,
 				B61ADB0D2073C568000A8F12 /* SwiftLint */,
 			);
 			buildRules = (
