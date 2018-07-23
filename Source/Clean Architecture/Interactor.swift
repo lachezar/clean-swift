@@ -4,8 +4,6 @@ public protocol Interactor: AnyObject {
   associatedtype PresenterType: Presenter
 
   var presenter: PresenterType { get }
-
-  init(presenter: PresenterType)
 }
 
 extension Interactor {
