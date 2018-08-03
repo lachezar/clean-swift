@@ -35,7 +35,6 @@
 		B61ADB142073C654000A8F12 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB132073C654000A8F12 /* Interface.swift */; };
 		B61ADB162073C67D000A8F12 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB152073C67D000A8F12 /* Interactor.swift */; };
 		B61ADB182073C69B000A8F12 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB172073C69B000A8F12 /* Presenter.swift */; };
-		B61ADB1A2073C73E000A8F12 /* ComponentsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB192073C73E000A8F12 /* ComponentsContainer.swift */; };
 		B641F8682074E788009A0A04 /* UIViewController+Childs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641F8672074E788009A0A04 /* UIViewController+Childs.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,7 +109,6 @@
 		B61ADB132073C654000A8F12 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		B61ADB152073C67D000A8F12 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		B61ADB172073C69B000A8F12 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		B61ADB192073C73E000A8F12 /* ComponentsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsContainer.swift; sourceTree = "<group>"; };
 		B641F8672074E788009A0A04 /* UIViewController+Childs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Childs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,7 +251,6 @@
 		B61ADB0E2073C590000A8F12 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B61ADB192073C73E000A8F12 /* ComponentsContainer.swift */,
 				B641F8672074E788009A0A04 /* UIViewController+Childs.swift */,
 				5CE50B6120F27B56007CBE34 /* Clean Architecture */,
 				5CE50B6220F27B66007CBE34 /* Routing */,
@@ -437,7 +434,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61ADB102073C59F000A8F12 /* Router.swift in Sources */,
-				B61ADB1A2073C73E000A8F12 /* ComponentsContainer.swift in Sources */,
 				B61ADB122073C62B000A8F12 /* RouterError.swift in Sources */,
 				B61ADB162073C67D000A8F12 /* Interactor.swift in Sources */,
 				5CE50B6B20F283BF007CBE34 /* Section.swift in Sources */,

@@ -2,12 +2,8 @@ import UIKit
 
 public protocol Router: AnyObject {
   associatedtype InterfaceType: UIViewController, Interface
-  associatedtype Factory
 
   var interface: InterfaceType! { get set }
-  var factory: Factory { get }
-
-  init(factory: Factory)
 }
 
 extension Router {
