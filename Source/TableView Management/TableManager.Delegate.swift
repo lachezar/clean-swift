@@ -8,6 +8,10 @@ extension TableManager {
     return row.height
   }
 
+  public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    self.tableScrolled?()
+  }
+
 //  public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
 //
 //  }

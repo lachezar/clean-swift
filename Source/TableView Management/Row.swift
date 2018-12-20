@@ -27,7 +27,7 @@ public final class Row<Cell: TableCell>: RowProtocol where Cell: UITableViewCell
 
   public var height: CGFloat {
     guard let height = cell?.height else {
-      return UITableViewAutomaticDimension
+      return UITableView.automaticDimension
     }
 
     return height

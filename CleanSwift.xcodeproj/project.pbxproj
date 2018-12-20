@@ -26,11 +26,6 @@
 		5CE940B720F0C147006A6522 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE940B520F0C147006A6522 /* Main.storyboard */; };
 		5CE940B920F0C148006A6522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE940B820F0C148006A6522 /* Assets.xcassets */; };
 		5CE940BC20F0C148006A6522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE940BA20F0C148006A6522 /* LaunchScreen.storyboard */; };
-		5CE940C720F0C1D0006A6522 /* TestScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE940C220F0C1D0006A6522 /* TestScreenFactory.swift */; };
-		5CE940C820F0C1D0006A6522 /* TestScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE940C320F0C1D0006A6522 /* TestScreenVC.swift */; };
-		5CE940C920F0C1D0006A6522 /* TestScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE940C420F0C1D0006A6522 /* TestScreenPresenter.swift */; };
-		5CE940CA20F0C1D0006A6522 /* TestScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE940C520F0C1D0006A6522 /* TestScreenRouter.swift */; };
-		5CE940CB20F0C1D0006A6522 /* TestScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE940C620F0C1D0006A6522 /* TestScreenInteractor.swift */; };
 		B61ADAFB2073B9E0000A8F12 /* CleanSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61ADAF12073B9E0000A8F12 /* CleanSwift.framework */; };
 		B61ADB102073C59F000A8F12 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB0F2073C59F000A8F12 /* Router.swift */; };
 		B61ADB122073C62B000A8F12 /* RouterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ADB112073C62B000A8F12 /* RouterError.swift */; };
@@ -99,11 +94,6 @@
 		5CE940B820F0C148006A6522 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CE940BB20F0C148006A6522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CE940BD20F0C148006A6522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CE940C220F0C1D0006A6522 /* TestScreenFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScreenFactory.swift; sourceTree = "<group>"; };
-		5CE940C320F0C1D0006A6522 /* TestScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScreenVC.swift; sourceTree = "<group>"; };
-		5CE940C420F0C1D0006A6522 /* TestScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScreenPresenter.swift; sourceTree = "<group>"; };
-		5CE940C520F0C1D0006A6522 /* TestScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScreenRouter.swift; sourceTree = "<group>"; };
-		5CE940C620F0C1D0006A6522 /* TestScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScreenInteractor.swift; sourceTree = "<group>"; };
 		B61ADAF12073B9E0000A8F12 /* CleanSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61ADAF52073B9E0000A8F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B61ADAFA2073B9E0000A8F12 /* CleanSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,25 +182,12 @@
 			isa = PBXGroup;
 			children = (
 				5CE940B120F0C147006A6522 /* AppDelegate.swift */,
-				5CE940C120F0C1D0006A6522 /* TestScreen */,
 				5CE940B520F0C147006A6522 /* Main.storyboard */,
 				5CE940B820F0C148006A6522 /* Assets.xcassets */,
 				5CE940BA20F0C148006A6522 /* LaunchScreen.storyboard */,
 				5CE940BD20F0C148006A6522 /* Info.plist */,
 			);
 			path = CleanSwiftExample;
-			sourceTree = "<group>";
-		};
-		5CE940C120F0C1D0006A6522 /* TestScreen */ = {
-			isa = PBXGroup;
-			children = (
-				5CE940C220F0C1D0006A6522 /* TestScreenFactory.swift */,
-				5CE940C620F0C1D0006A6522 /* TestScreenInteractor.swift */,
-				5CE940C420F0C1D0006A6522 /* TestScreenPresenter.swift */,
-				5CE940C520F0C1D0006A6522 /* TestScreenRouter.swift */,
-				5CE940C320F0C1D0006A6522 /* TestScreenVC.swift */,
-			);
-			path = TestScreen;
 			sourceTree = "<group>";
 		};
 		B61ADAE72073B9E0000A8F12 = {
@@ -347,10 +324,11 @@
 				TargetAttributes = {
 					5CE940AE20F0C147006A6522 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					B61ADAF02073B9E0000A8F12 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1000;
 					};
 					B61ADAF92073B9E0000A8F12 = {
 						CreatedOnToolsVersion = 9.3;
@@ -426,12 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE940CB20F0C1D0006A6522 /* TestScreenInteractor.swift in Sources */,
-				5CE940C920F0C1D0006A6522 /* TestScreenPresenter.swift in Sources */,
-				5CE940CA20F0C1D0006A6522 /* TestScreenRouter.swift in Sources */,
-				5CE940C720F0C1D0006A6522 /* TestScreenFactory.swift in Sources */,
 				5CE940B220F0C147006A6522 /* AppDelegate.swift in Sources */,
-				5CE940C820F0C1D0006A6522 /* TestScreenVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +490,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Diasyst.CleanSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -541,7 +514,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Diasyst.CleanSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -689,7 +662,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -716,7 +689,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.inceptdevelopment.Diasyst.CleanSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -727,10 +700,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N38ZYSMZ59;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../dependencies",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = CleanSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -750,10 +720,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N38ZYSMZ59;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../dependencies",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = CleanSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,11 +7,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(
     _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
 
-    let container = ComponentsContainer()
-    let vc = container.testScreenComponent()
+    let vc = UIViewController()
+    vc.view.backgroundColor = .red
     let nVC = UINavigationController(rootViewController: vc)
 
     window?.rootViewController = nVC

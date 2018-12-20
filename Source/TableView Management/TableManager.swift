@@ -4,6 +4,7 @@ import Differ
 public final class TableManager: NSObject, UITableViewDataSource, UITableViewDelegate {
   // MARK: - Properties
   public typealias Container = TableContainer & UIViewController
+  public typealias TableScroll = () -> Void
 
   public weak var tableView: UITableView? {
     return container?.tableView
@@ -16,6 +17,8 @@ public final class TableManager: NSObject, UITableViewDataSource, UITableViewDel
   public private(set) var sections: [Section] = []
 
   weak var container: Container?
+
+  var tableScrolled: TableScroll?
 
   // MARK: - Initialization
   public init(tableContainer: Container) {
@@ -53,6 +56,12 @@ public final class TableManager: NSObject, UITableViewDataSource, UITableViewDel
     tableView?.deleteRows(at: updates.deletions, with: .automatic)
     tableView?.insertRows(at: updates.insertions, with: .automatic)
     tableView?.endUpdates()
+  }
+
+  @discardableResult
+  public func tableScrolled(_ closure: @escaping TableScroll) -> Self {
+    tableScrolled = closure
+    return self
   }
 
   // MARK: - Internal 🧡
