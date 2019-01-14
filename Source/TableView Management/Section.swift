@@ -1,23 +1,25 @@
-import UIKit
+import Foundation
 
-public class Section {
+public struct Section {
   // MARK: - Properties
-  public private(set) var rows = [RowProtocol]()
+  public private(set) var rows = [Row]()
 
   public var headerTitle: String?
   public var footerTitle: String?
+
+  public var header: HeaderFooter?
+  public var footer: HeaderFooter?
 
   public var count: Int {
     return rows.count
   }
 
   // MARK: - Initialization
-  public init(rows: [RowProtocol]) {
+  public init(rows: [Row]) {
     self.rows = rows
   }
 
-  // MARK: - Internal 🧡
-  func set(rows: [RowProtocol]) {
+  mutating public func set(rows: [Row]) {
     self.rows = rows
   }
 }

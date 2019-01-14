@@ -9,10 +9,11 @@ extension TableManager {
     registerCell(row: row)
 
     let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
-    row.configure(cell, path: indexPath)
+    row.configure(template: cell, path: indexPath)
 
     if let container = container { row.displayComponent(in: container) }
     row.onDequeue?(row)
+//    print("cellForRowAt \(indexPath)")
 
     return cell
   }

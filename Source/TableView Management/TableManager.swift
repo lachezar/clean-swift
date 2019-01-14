@@ -10,8 +10,9 @@ public final class TableManager: NSObject, UITableViewDataSource, UITableViewDel
     return container?.tableView
   }
 
-  // Store registered cells reuseIdentifiers
-  private var cellsReuseIDs = Set<String>()
+  // Store registered cells and headers/footers reuseIdentifiers
+  private var cellsReuseIDs        = Set<String>()
+  private var headerFooterReuseIDs = Set<String>()
 
   // Store Sections for the table
   public private(set) var sections: [Section] = []
@@ -30,19 +31,19 @@ public final class TableManager: NSObject, UITableViewDataSource, UITableViewDel
     tableView?.dataSource = self
   }
 
-  // MARK: - public 💙
+  // MARK: - Public 💚
   public func reloadData(sections: [Section]) {
     self.sections = sections
     tableView?.reloadData()
   }
 
-  public func update(with rows: [RowProtocol], inSectionAt index: Int) {
+  public func update(with rows: [Row], inSectionAt index: Int) {
     guard sections.indices.contains(index) else {
       fatalError("Missing section at index: \(index)")  }
 
     let section = sections[index]
-    let old = section.rows.map(RowContainer.init)
-    let new = rows.map(RowContainer.init)
+    let old = section.rows
+    let new = rows
     let diff = old.extendedDiff(new)
 
     // skip updating if there is no updates
@@ -65,35 +66,47 @@ public final class TableManager: NSObject, UITableViewDataSource, UITableViewDel
   }
 
   // MARK: - Internal 🧡
-  func registerCell(row: RowProtocol) {
+  func registerCell(row: Row) {
     let reuseIdentifier = row.reuseIdentifier
     // Do nothing if cell reuse identifier is already registered.
     guard !cellsReuseIDs.contains(reuseIdentifier) else {
       return }
 
     // retister the cell
-    tableView?.register(row.cellType, forCellReuseIdentifier: reuseIdentifier)
+    tableView?.register(row.reuseType, forCellReuseIdentifier: reuseIdentifier)
     cellsReuseIDs.insert(reuseIdentifier)
   }
 
-  func row(for path: IndexPath) -> RowProtocol {
+  func registerHeaderFooter(_ headerFooter: HeaderFooter) {
+    let reuseIdentifier = headerFooter.reuseIdentifier
+    // Do nothing if header/footer reuse identifier is already registered.
+    guard !headerFooterReuseIDs.contains(reuseIdentifier) else {
+      return }
+
+    // register
+    tableView?.register(headerFooter.reuseType, forHeaderFooterViewReuseIdentifier: reuseIdentifier)
+    headerFooterReuseIDs.insert(reuseIdentifier)
+  }
+
+  func row(for path: IndexPath) -> Row {
     let section = sections[path.section]
     let row = section.rows[path.row]
 
     return row
+  }
+
+  func header(for section: Int) -> HeaderFooter? {
+    let section = sections[section]
+    return section.header
+  }
+
+  func footer(for section: Int) -> HeaderFooter? {
+    let section = sections[section]
+    return section.footer
   }
 }
 
 // MARK: - TableContainer Protocol
 public protocol TableContainer: AnyObject {
   var tableView: UITableView { get }
-}
-
-// swiftlint:disable private_over_fileprivate
-fileprivate struct RowContainer: Equatable {
-  let row: RowProtocol
-
-  static func == (lhs: RowContainer, rhs: RowContainer) -> Bool {
-    return lhs.row.id == rhs.row.id
-  }
 }

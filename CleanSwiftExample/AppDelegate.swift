@@ -10,9 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
 
-    let vc = UIViewController()
-    vc.view.backgroundColor = .red
-    let nVC = UINavigationController(rootViewController: vc)
+    let nVC = UINavigationController(rootViewController: Screen.menu)
 
     window?.rootViewController = nVC
     window?.makeKeyAndVisible()

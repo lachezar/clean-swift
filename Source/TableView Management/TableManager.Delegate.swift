@@ -5,6 +5,7 @@ extension TableManager {
   // MARK: - Configuring Rows for the Table View
   public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let row = self.row(for: indexPath)
+//    print("heightForRowAt \(indexPath) | \(row.height)")
     return row.height
   }
 
@@ -61,25 +62,67 @@ extension TableManager {
 //  }
 
   // MARK: - Modifying the Header and Footer of Sections
-//  public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//  }
-//
-//  public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//
-//  }
+  public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    guard let header = header(for: section) else {
+      return nil }
 
-//  public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//
-//  }
+    registerHeaderFooter(header)
+
+    guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: header.reuseIdentifier) else {
+      return nil }
+
+    header.configure(template: headerView, path: IndexPath(row: 0, section: section))
+    if let container = container { header.displayComponent(in: container) }
+
+    return headerView
+  }
+
+  public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    guard let footer = footer(for: section) else {
+      return nil }
+
+    registerHeaderFooter(footer)
+
+    guard let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: footer.reuseIdentifier) else {
+      return nil }
+
+    footer.configure(template: footerView, path: IndexPath(row: 0, section: section))
+    if let container = container { footer.displayComponent(in: container) }
+
+    return footerView
+  }
+
+  public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    let section = sections[section]
+
+    if let header = section.header {
+      return header.height
+    }
+
+    if section.headerTitle != nil {
+      return UITableView.automaticDimension
+    } else {
+      return 0
+    }
+  }
 
 //  public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
 //
 //  }
 
-//  public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//
-//  }
+  public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    let section = sections[section]
+
+    if let footer = section.footer {
+      return footer.height
+    }
+
+    if section.footerTitle != nil {
+      return UITableView.automaticDimension
+    } else {
+      return 0
+    }
+  }
 
 //  public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
 //
@@ -127,18 +170,23 @@ extension TableManager {
 //  }
 
   // MARK: - Tracking the Removal of Views
-//  public func tableView(
-//    _ tableView: UITableView,
-//    didEndDisplaying cell: UITableViewCell,
-//    forRowAt indexPath: IndexPath) {
-//  }
+  public func tableView(
+    _ tableView: UITableView,
+    didEndDisplaying cell: UITableViewCell,
+    forRowAt indexPath: IndexPath) {
 
-//  public func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
-//
-//  }
-//  public func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
-//
-//  }
+    let row = self.row(for: indexPath)
+    row.removeComponent()
+  }
+
+  public func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
+    let header = self.header(for: section)
+    header?.removeComponent()
+  }
+  public func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
+    let footer = self.footer(for: section)
+    footer?.removeComponent()
+  }
 
   // MARK: - Copying and Pasting Row Content
 //  public func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
