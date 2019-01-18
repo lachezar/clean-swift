@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>TableCell</string>
+	<string>TableCell - Component</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>TopLevel</string>
@@ -13,14 +13,16 @@
 import CleanSwift
 import PinLayout
 
-final class &lt;# Cell class name #&gt;: UITableViewCell, ElementTemplate {
+final class &lt;# Name #&gt;: UITableViewCell, ComponentTemplate {
     
-    &lt;# Model: ElementModel #&gt;
+    &lt;# type #&gt; Model: ElementModel {
+        &lt;# code #&gt;
+    }
     
     // MARK: - Properties
     
     let height: CGFloat = &lt;# Number #&gt;
-    
+    var component: &lt;# Component Type #&gt;?
     
     // MARK: - Initialization
     
@@ -32,14 +34,12 @@ final class &lt;# Cell class name #&gt;: UITableViewCell, ElementTemplate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - ElementTemplate
     
     func configure(model: ElementModel, path: IndexPath) {
         guard let model = model as? Model else {
             return }
     }
-    
     
     // MARK: - Override
     
@@ -49,7 +49,7 @@ final class &lt;# Cell class name #&gt;: UITableViewCell, ElementTemplate {
     }
     
     // Uncomment it for self sizing cells
-    //  override func sizeThatFits(_ size: CGSize) -&gt; CGSize {
+    //  override func sizeThatFits(_ size: CGSize) -&amp;gt; CGSize {
     //    contentView.pin.width(size.width)
     //    layout()
     //  }
@@ -58,13 +58,13 @@ final class &lt;# Cell class name #&gt;: UITableViewCell, ElementTemplate {
     }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>EEDF7FD8-6657-4AFE-9922-AA9B3945A2C8</string>
+	<string>02E93998-B85E-4DD0-B684-E0EAB36A63B2</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetPlatformFamily</key>
 	<string>iphoneos</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Table Cell: ElementTemplate</string>
+	<string>Table Cell - Component</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

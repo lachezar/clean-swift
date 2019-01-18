@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>Table</string>
+	<string>TableHeaderFooter - Element</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>TopLevel</string>
@@ -13,16 +13,15 @@
 import CleanSwift
 import PinLayout
 
-final class &lt;# HeaderFooter name #&gt;: UITableViewHeaderFooterView, ComponentTemplate {
+final class &lt;# Name #&gt;: UITableViewHeaderFooterView, ElementTemplate {
     
-    &lt;# Model: ElementModel #&gt;
-    
+    &lt;# type #&gt; Model: ElementModel {
+        &lt;# code #&gt;
+    }
     
     // MARK: - Properties
     
     let height: CGFloat = &lt;# Number #&gt;
-    var component: &lt;# Component Type #&gt;?
-    
     
     // MARK: - Initialization
     
@@ -34,14 +33,12 @@ final class &lt;# HeaderFooter name #&gt;: UITableViewHeaderFooterView, Componen
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    // MARK: - ElementTemplate
+    // MARK: - API
     
     func configure(model: ElementModel, path: IndexPath) {
         guard let model = model as? Model else {
             return }
     }
-    
     
     // MARK: - Override
     
@@ -51,26 +48,25 @@ final class &lt;# HeaderFooter name #&gt;: UITableViewHeaderFooterView, Componen
     }
     
     // Uncomment it for self sizing cells
-    //  override func sizeThatFits(_ size: CGSize) -&gt; CGSize {
+    //  override func sizeThatFits(_ size: CGSize) -&amp;gt; CGSize {
     //    contentView.pin.width(size.width)
     //    layout()
     //  }
     
     private func layout() {
     }
-}
-</string>
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>064FBBBA-2D9F-400B-9151-A92BD8C28E64</string>
+	<string>C2596A62-A2B7-446F-8D05-3D4091E42D80</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetPlatformFamily</key>
 	<string>iphoneos</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Table Header/Footer: ComponentElement</string>
+	<string>Table HeaderFooter - Element</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>
