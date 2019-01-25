@@ -19,10 +19,10 @@ public final class MenuPresenter: Presenter {
     case .initial:
       return
     case .listMenus:
-      justCells.onHighlight{ [weak self] _ in
+      justCells.onSelect{ [weak self] _ in
         self?.router.route = .justCells
       }
-      sectionsCell.onHighlight { [weak self] _ in
+      sectionsCell.onSelect { [weak self] _ in
         self?.router.route = .customSections
       }
       interface.tableManager.reloadData(sections: [section])

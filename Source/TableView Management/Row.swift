@@ -9,8 +9,9 @@ public final class Row: TableElement {
 
   // MARK: - Events
   public typealias CompleteClosure = (Row) -> Void
-  public private(set) var onDequeue: CompleteClosure?
-  public private(set) var onHighlight: CompleteClosure?
+  private(set) var onDequeue: CompleteClosure?
+  private(set) var onHighlight: CompleteClosure?
+  private(set) var onSelect: CompleteClosure?
 
   @discardableResult
   public func onDequeue(_ closure: @escaping CompleteClosure) -> Row {
@@ -21,6 +22,12 @@ public final class Row: TableElement {
   @discardableResult
   public func onHighlight(_ closure: @escaping CompleteClosure) -> Row {
     onHighlight = closure
+    return self
+  }
+
+  @discardableResult
+  public func onSelect(_ closure: @escaping CompleteClosure) -> Row {
+    onSelect = closure
     return self
   }
 }

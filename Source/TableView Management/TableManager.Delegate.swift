@@ -49,9 +49,10 @@ extension TableManager {
 //
 //  }
 
-//  public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//  }
+  public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let row = self.row(for: indexPath)
+    row.onSelect?(row)
+  }
 
 //  public func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
 //
