@@ -10,7 +10,8 @@ public protocol ComponentTemplate: ElementTemplate, Componentable {}
 
 extension ComponentTemplate {
   public func displayComponent(in container: UIViewController) {
-    if let component = self.component {
+    if
+      let component = self.component {
       container.add(component) { contentView.addSubview($0) }
     }
   }

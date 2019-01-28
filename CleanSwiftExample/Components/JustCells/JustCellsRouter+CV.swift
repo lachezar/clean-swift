@@ -15,6 +15,11 @@ extension JustCellsRouter {
       b.setTitle("Append Row", for: .normal)
       return b
     }()
+    let reloadButton: UIButton = {
+      let b = UIButton(type: .system)
+      b.setTitle("Reload", for: .normal)
+      return b
+    }()
     // MARK: - Initialization
     init() {
       super.init(frame: .zero)
@@ -25,6 +30,7 @@ extension JustCellsRouter {
 
       addSubview(tableView)
       addSubview(showCildrensCountButton)
+      addSubview(reloadButton)
       addSubview(appendButton)
     }
     required init?(coder aDecoder: NSCoder) {
@@ -53,6 +59,7 @@ extension JustCellsRouter {
       tableView.pin.left().right().bottom(self.pin.safeArea.bottom + 50).top(self.pin.safeArea)
       showCildrensCountButton.pin.left(16).height(44).sizeToFit(.height).bottom(self.pin.safeArea)
       appendButton.pin.right(16).height(44).sizeToFit(.height).bottom(self.pin.safeArea)
+      reloadButton.pin.top(to: showCildrensCountButton.edge.top).hCenter().height(44).sizeToFit(.height)
     }
   }
 }

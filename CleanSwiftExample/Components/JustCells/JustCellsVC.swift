@@ -43,6 +43,8 @@ public final class JustCellsVC: UIViewController, Interface, TableContainer {
       .addTarget(self, action: #selector(childernsCountTapped), for: .touchUpInside)
     router.contentView.appendButton
       .addTarget(self, action: #selector(appendNewRowTapped), for: .touchUpInside)
+    router.contentView.reloadButton
+      .addTarget(self, action: #selector(reloadTapped), for: .touchUpInside)
   }
 
   @objc
@@ -51,7 +53,20 @@ public final class JustCellsVC: UIViewController, Interface, TableContainer {
   }
 
   @objc
+  func reloadTapped() {
+    presenter.state = .listCells
+    presenter.state = .loadCells
+  }
+
+  @objc
   func appendNewRowTapped() {
     presenter.state = .appendRow
+  }
+
+  public override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    presenter.state = .listCells
+    presenter.state = .loadCells
   }
 }

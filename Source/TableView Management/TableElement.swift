@@ -43,6 +43,9 @@ public class TableElement {
       fatalError("provided UIView doesn't conforms to ElementTemplate")
     }
 
+    // resetting cell component
+    tableTemplate.removeComponent()
+
     self.template = tableTemplate
     indexPath     = path
     self.template.configure(model: model, path: path)

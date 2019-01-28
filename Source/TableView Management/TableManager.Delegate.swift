@@ -171,14 +171,11 @@ extension TableManager {
 //  }
 
   // MARK: - Tracking the Removal of Views
-  public func tableView(
-    _ tableView: UITableView,
-    didEndDisplaying cell: UITableViewCell,
-    forRowAt indexPath: IndexPath) {
-
-    let row = self.row(for: indexPath)
-    row.removeComponent()
-  }
+//  public func tableView(
+//    _ tableView: UITableView,
+//    didEndDisplaying cell: UITableViewCell,
+//    forRowAt indexPath: IndexPath) {
+//  }
 
   public func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
     let header = self.header(for: section)
