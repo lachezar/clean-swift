@@ -37,7 +37,7 @@ public final class TableManager: NSObject, UITableViewDataSource, UITableViewDel
     tableView?.reloadData()
   }
 
-  public func update(with rows: [Row], inSectionAt index: Int) {
+  public func update(with rows: [Row], inSectionAt index: Int, animation: UITableView.RowAnimation = .automatic) {
     guard sections.indices.contains(index) else {
       fatalError("Missing section at index: \(index)")  }
 
@@ -54,8 +54,8 @@ public final class TableManager: NSObject, UITableViewDataSource, UITableViewDel
     sections[index].set(rows: rows)
 
     tableView?.beginUpdates()
-    tableView?.deleteRows(at: updates.deletions, with: .automatic)
-    tableView?.insertRows(at: updates.insertions, with: .automatic)
+    tableView?.deleteRows(at: updates.deletions, with: animation)
+    tableView?.insertRows(at: updates.insertions, with: animation)
     tableView?.endUpdates()
   }
 
