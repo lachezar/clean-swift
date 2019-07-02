@@ -25,7 +25,7 @@ class RowTests: XCTestCase {
     XCTAssert(row.height == 10)
 
     cell.height = 0
-    XCTAssert(row.height == UITableViewAutomaticDimension)
+    XCTAssert(row.height == UITableView.automaticDimension)
   }
 
 }

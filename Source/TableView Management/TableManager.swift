@@ -6,7 +6,7 @@ public final class TableManager: NSObject, UITableViewDataSource, UITableViewDel
   public typealias Container = TableContainer & UIViewController
   public typealias TableScroll = () -> Void
 
-  public weak var tableView: UITableView? {
+  public var tableView: UITableView? {
     return container?.tableView
   }
 
